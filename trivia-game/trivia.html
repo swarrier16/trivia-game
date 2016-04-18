@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Comfortaa' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/css/materialize.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="css/animate.css">
+  <link rel="stylesheet" type="text/css" href="css/styles.css"> 
+</head>
+<body>
+    
+      <div class="row">
+        <div class="col s12">
+          <div id="welcome-screen">
+          <div class="slider">
+    		<ul class="slides">
+      			<li>
+			        <img src="img/back.jpg"> 
+			        <div class="caption center-align">
+			        <br><br><br><br><br><br><br><br><br><br>
+		          <h2>Welcome to Disney Trivia!</h2>          
+		        </div>
+		      </li>
+		     </ul>
+		    </div>
+		    <div class="container">
+    		<h4 class="light text-lighten-3">What is your name?</h4>
+	          <form>
+	              <div class="input-field col s4">
+	                <input id="player-name" type="text" placeholder="Type your name here">
+	                <label class="active" for="first_name2"></label>
+	                <button type="submit" id="name-button" class="waves-effect waves-light btn pink">Submit</button>
+	              </div>
+	            </form>
+	           </div>
+	          </div>
+	         </div>
+	        </div>
+  	<!--Dashboard-->
+  	
+      <div class="row" id="q1">
+        <div class="col s12">
+        	 <div class="slider">
+	    		<ul class="slides">
+	      			<li>
+				        <img src="http://wallpapercave.com/wp/Ou1L18s.jpg"> 
+				        <div class="caption center-align">
+				        <br><br><br><br><br><br>
+			          <h2>What was the very first animated Disney Movie?</h2>          
+			        </div>
+			      </li>
+		     	</ul>
+		    </div>
+  
+          <div class= "container">
+            <!--h3 id="show-player-name"></h3-->
+      <div class="row">
+      	<div class="col s12">
+      	<div id="question1">
+      		<form>
+      			<div class="input-field col s6">
+      				<input id="input-question1" type ="text" placeholder="Type your answer here">
+      				<label class="active" for ="input-question1">Question 1 </label>
+      				<button type="submit" id="question1-btn" class="waves-effect waves-light btn pink">Answer</button> 
+      				<button type="submit" id="next-question1" class="waves-effect waves-light btn pink">Next Question</button> 
+      			</div>     	
+      		</form>
+      		<div id="answer1" class="answer">
+      			<!--h5>Your answer is: <span id="show-player-answer1"></span></h5>
+      			<h5>The correct answer is: <span id="correct-answer1"></span></h5-->
+      			<h5 id="correct-msg1" class="green-text correct-msg">You are correct!</h5>
+      			<h5 id="incorrect-msg1" class="red-text correct-msg">You are incorrect!</h5>
+      		</div>			
+          	</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="row" id="q2">
+        <div class="col s12">
+        	 <div class="slider">
+	    		<ul class="slides">
+	      			<li>
+				        <img src="http://topcartooncharacters.com/wp-content/uploads/2016/01/Tangled-17.jpg"> 
+				        <div class="caption center-align">
+				        <br><br><br><br><br><br>
+			          <h2>Who in the princess lineup has no ties to royalty?</h2>          
+			        </div>
+			      </li>
+		     	</ul>
+		    </div>
+		  </div>
+		 </div>
+  
+          <div class= "container">
+            <!--h3 id="show-player-name"></h3-->
+      <div class="row">
+      	<div class="col s12">
+      	<div id="question2">
+      		<form>
+      			<div class="input-field col s6">
+      				<input id="input-question1" type ="text" placeholder="Type your answer here">
+      				<label class="active" for ="input-question1">Question 2 </label>
+      				<button type="submit" id="question2-btn" class="waves-effect waves-light btn pink">Answer</button> 
+      			</div>     	
+      		</form>
+      		<div id="answer1" class="answer">
+      			<h5>Your answer is: <span id="show-player-answer2"></span></h5>
+      			<h5>The correct answer is: <span id="correct-answer2"></span></h5>
+      		</div>			
+          	</div>
+        </div>
+      </div>
+    </div>
+  </main>
+  </body>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.5/js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/scripts.js"></script>
+</body>
+</html>	
