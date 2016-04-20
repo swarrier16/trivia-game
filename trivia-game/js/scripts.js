@@ -28,6 +28,8 @@ $(document).ready(function() {
   $('#question2').hide();
   $('#next-question1').hide();
   $('#correct-msg1').hide();
+  $('#correct-img1').hide();
+  $('#incorrect-img1').hide();
   $('#incorrect-msg1').hide();
   //Allow user to type name immediately on page load
 
@@ -76,12 +78,14 @@ function answerCheck1() {
     if(playerAnswer1 === answer1) {
       console.log("Player's answer is correct!");
       $('#correct-msg1').show().addClass('animated fadeIn');
+      $('#correct-img1').show().addClass('animated fadeIn');
       correctCounter++;
       $('#score').text(correctCounter);
     }
     else {
       console.log("Player's answer is incorrect!");
       $('#incorrect-msg1').show().addClass('animated fadeIn');
+      $('#incorrect-img1').show().addClass('animated fadeIn');
     }
   };
 
