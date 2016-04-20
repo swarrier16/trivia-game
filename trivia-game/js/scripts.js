@@ -21,7 +21,7 @@ $(document).ready(function() {
   var incorrectCounter = 0;
 
 
-  $('#show-player-name').hide();
+  $('#dashboard').hide();
   $('#q1').hide();
   $('#q2').hide();
   $('#question1').hide();
@@ -39,6 +39,8 @@ $(document).ready(function() {
     $('#welcome-screen').detach();
     $('#q1').show().addClass('animated fadeIn');
     $('#question1').show().addClass('animated fadeIn');
+    $('#dashboard').show().addClass('animated fadeIn');
+
   };
 
   //submit name
@@ -70,37 +72,36 @@ $(document).ready(function() {
 		$('#next-question1').show();
 	};
 
-	function answerCheck1 () {
-		if (playerAnswer1 === answer1) {
-			console.log ('the answers match');
-			$('#correct-msg1').show();
-			correctCounter = ++;
-		}
-		else {
-			console.log ('it is incorrect');
-			$('#incorrect-msg1').show();
-		}
-
-	}
-
-
+function answerCheck1() {
+    if(playerAnswer1 === answer1) {
+      console.log("Player's answer is correct!");
+      $('#correct-msg1').show().addClass('animated fadeIn');
+      correctCounter++;
+      $('#score').text(correctCounter);
+    }
+    else {
+      console.log("Player's answer is incorrect!");
+      $('#incorrect-msg1').show().addClass('animated fadeIn');
+    }
+  };
 
 //remove question 1
-   function removeQuestion1() {
-   	console.log('this is working');
+   function removeQ1() {
+   	
     $('#q1').detach();
-    $('#question2').detach();
+    $('#question1').detach();
     $('#q2').show().addClass('animated fadeIn');
     $('#question2').show().addClass('animated fadeIn');
+    console.log('this is working');
   };
 
  $('#next-question1').on('click', function(e) {
  	console.log('new question');
-    e.preventDefault(e); // prevents form from s$('#question2').hide();ubmitting to a database
+    e.preventDefault(); // prevents form from s$('#question2').hide();ubmitting to a database
     $('#q1').addClass('animated fadeOutUp');
-    setTimeout(removeQuestion1, 1000);
+    setTimeout(removeQ1, 1000);
   });
-
+/*
 //submits answer for q2
 	$('#question2-btn').on('click', function(e) {
     e.preventDefault(); // prevents form from submitting to a database    
@@ -115,6 +116,6 @@ $(document).ready(function() {
 		$('#correct-answer2').text(answer1);
 	};
 
-
+*/
 
 }); // ready function ends
