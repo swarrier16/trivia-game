@@ -16,12 +16,13 @@ $(document).ready(function() {
   var playerAnswer1 = '';
   var answer1 = 'snow white';
   var playerAnswer2 = '';
-  var answer2 = 'Mulan';
+  var answer2 = 'mulan';
   var correctCounter = 0;
   var incorrectCounter = 0;
+  var triesLeft = 3;
 
 
-  $('#dashboard').hide();
+ $('.dashboard').hide();
   $('#q1').hide();
   $('#q2').hide();
   $('#question1').hide();
@@ -41,7 +42,7 @@ $(document).ready(function() {
     $('#welcome-screen').detach();
     $('#q1').show().addClass('animated fadeIn');
     $('#question1').show().addClass('animated fadeIn');
-    $('#dashboard').show().addClass('animated fadeIn');
+    $('.dashboard').show().addClass('animated fadeIn');
 
   };
 
@@ -50,7 +51,7 @@ $(document).ready(function() {
   $('#name-button').on('click', function(e) {
     e.preventDefault(); // prevents form from submitting to a database
     playerName = $('#player-name').val();
-    $('#show-player-name').text(playerName);
+    $('.show-player-name').text(playerName);
     $('#welcome-screen').addClass('animated fadeOutUp');
     setTimeout(removeWelcomeScreen, 1000);
   });
@@ -61,65 +62,88 @@ $(document).ready(function() {
     e.preventDefault(); // prevents form from submitting to a database    
     playerAnswer1 = $('#input-question1').val().trim().toLowerCase ();
     showPlayerAnswer1();
-    answerCheck1 ();
-    $('#question1-btn').hide();
-    
+    answerCheck1 ();    
   });
 
 
 //show answers
-	function showPlayerAnswer1() {
+function showPlayerAnswer1() {
 		$('#show-player-answer1').text(playerAnswer1);
 		$('#correct-answer1').text(answer1);
-		$('#next-question1').show();
 	};
 
+//check if answer in right or wrong
 function answerCheck1() {
     if(playerAnswer1 === answer1) {
       console.log("Player's answer is correct!");
       $('#correct-msg1').show().addClass('animated fadeIn');
-      $('#correct-img1').show().addClass('animated fadeIn');
+      //$('#correct-img1').show().addClass('animated fadeIn');
       correctCounter++;
-      $('#score').text(correctCounter);
+      $('.score').text(correctCounter);
+      setTimeout(fadeOutQuestion1, 2500);
+
     }
     else {
       console.log("Player's answer is incorrect!");
       $('#incorrect-msg1').show().addClass('animated fadeIn');
-      $('#incorrect-img1').show().addClass('animated fadeIn');
+      //$('#incorrect-img1').show().addClass('animated fadeIn');
     }
   };
 
-//remove question 1
-   function removeQ1() {
-   	
-    $('#q1').detach();
+//removes question 1 and puts in question 2
+function fadeOutQuestion1() {
     $('#question1').detach();
+    $('#q1').detach();
+    $('#question1').addClass('animated fadeOut');
+    $('#q1').addClass('animated fadeOut');
+    setTimeout($('#question1').detach(), 2500);
     $('#q2').show().addClass('animated fadeIn');
     $('#question2').show().addClass('animated fadeIn');
-    console.log('this is working');
+    $('#correct-msg1').hide();
+    $('#correct-img1').hide();
+    $('#incorrect-msg1').hide();
+    $('#incorrect-img1').hide();
+    $('.dashboard').show().addClass('animated fadeIn');
+    console.log (playerName, correctCounter);
   };
 
- $('#next-question1').on('click', function(e) {
- 	console.log('new question');
-    e.preventDefault(); // prevents form from s$('#question2').hide();ubmitting to a database
-    $('#q1').addClass('animated fadeOutUp');
-    setTimeout(removeQ1, 1000);
-  });
-/*
+//three strikes and youre out counter
+ function triesLeftCountdown() {
+    triesLeft--;
+    $('#tries-left').text(triesLeft);
+    if(triesLeft === 0) {
+      $('.question').addClass('animated fadeOut');
+      $('.question').detach();
+      $('#lose-game-msg').show().addClass('animated fadeIn')
+    };
+  };
+
 //submits answer for q2
 	$('#question2-btn').on('click', function(e) {
     e.preventDefault(); // prevents form from submitting to a database    
     playerAnswer2 = $('#input-question1').val().trim();
     console.log(playerAnswer2);
-    showPlayerAnswer2();
   });
 
-//shows player answer and actual answer
-	function showPlayerAnswer2() {
-		$('#show-player-answer2').text(playerAnswer1);
-		$('#correct-answer2').text(answer1);
-	};
+	function answerCheck2() {
+    if(playerAnswer2 === answer2) {
+      console.log("Player's answer is correct!");
+      $('#correct-msg1').show().addClass('animated fadeIn');
+      //$('#correct-img1').show().addClass('animated fadeIn');
+      correctCounter++;
+      $('.score').text(correctCounter);
+      setTimeout(fadeOutQuestion1, 2500);
 
-*/
+    }
+    else {
+      console.log("Player's answer is incorrect!");
+      $('#incorrect-msg1').show().addClass('animated fadeIn');
+      //$('#incorrect-img1').show().addClass('animated fadeIn');
+    }
+  };
+
+
+
+
 
 }); // ready function ends
