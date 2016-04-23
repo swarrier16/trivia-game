@@ -39,6 +39,7 @@
 	         </div>
 	        </div>
   	
+
       <!--first question -->
       <div class="row" id="q1">
         <div class="col s12">
@@ -47,13 +48,19 @@
 	      			<li>
 				        <img src="http://wallpapercave.com/wp/Ou1L18s.jpg"> 
 				        <div class="caption center-align">
-				        <br><br><br><br><br><br>
-			          <h2>What was the very first animated Disney Movie?</h2>          
+				        <br><br><br><br>
+			          <h2>What was the very first animated Disney Movie?</h2>
+			          <div class="container dashboard">
+			            <h4 class="show-player-name">Player Name</h4>
+			            <h4>Score: <span class="score">0</span></h4>
+			          </div>
+			        </div>          
 			        </div>
 			      </li>
 		     	</ul>
 		    </div>
-  
+  	
+
           <div class= "container">
             <!--h3 id="show-player-name"></h3-->
       <div class="row">
@@ -63,13 +70,9 @@
       			<div class="input-field col s6">
       				<input id="input-question1" type ="text" placeholder="Type your answer here">
       				<label class="active" for ="input-question1">Question 1 </label>      				
-          <div id="dashboard">
-            <h3 id="show-player-name">Player Name</h3>
-            <h4>Score: <span id="score">0</span></h4>
-          </div>
-        </div>
+          
       				<span><button type="submit" id="question1-btn" class="waves-effect waves-light btn pink">Answer</button> </span>
-      				<button type="submit" id="next-question1" class="waves-effect waves-light btn pink">Next Question</button> 
+      				<!--button type="submit" id="next-question1" class="waves-effect waves-light btn pink">Next Question</button--> 
       			</div>     	
       		</form>
       		<div id="answer1" class="answer">
@@ -84,8 +87,53 @@
         </div>
       </div>
     </div>
+    </div>	
 
-    <div class="row" id="q2">
+    <!--second question -->
+      <div class="row" id="q2">
+        <div class="col s12">
+        	 <div class="slider">
+	    		<ul class="slides">
+	      			<li>
+				        <img src="http://wallpapercave.com/wp/X3PGpQA.jpg"> 
+				        <div class="caption center-align">
+				        <br><br><br><br>
+			          <h2>Which princess in the official lineup has no ties to royalty?</h2> 
+			          <div class="container dashboard">
+			          	<h4 class="show-player-name">Player Name</h4>
+			            <h4>Score: <span class="score">0</span></h4>
+			            <span
+			          </div>         
+			        </div>
+			      </li>
+		     	</ul>
+		    </div>
+  
+      <div class= "container">
+      <div class="row">
+      	<div class="col s12">
+      	<div id="question2">
+      		<form>
+      			<div class="input-field col s6">
+      				<input id="input-question1" type ="text" placeholder="Type your answer here">
+      				<label class="active" for ="input-question1">Question 2 </label>      				
+			        </div>
+      				<span><button type="submit" id="question2-btn" class="waves-effect waves-light btn pink">Answer</button> </span>
+      				<!--button type="submit" id="next-question1" class="waves-effect waves-light btn pink">Next Question</button--> 
+      			</div>     	
+      		</form>
+      		<div id="answer2" class="answer">
+      			<h5 id="correct-msg1" class="green-text correct-msg">You are correct!</h5>
+      			<img id="correct-img1" src="http://www.dis411.net/wp-content/uploads/2012/11/mickey-mouse-pic.jpg">
+      			<h5 id="incorrect-msg1" class="red-text correct-msg">You are incorrect!</h5>
+      			<img id="incorrect-img1" src="http://www.dadsguidetowdw.com/image-files/upset-with-disney-mickey-embarrased.jpg">
+      		</div>			
+          	</div>
+        </div>
+      </div>
+    </div>
+
+    <!--div class="row" id="q2">
         <div class="col s12">
         	 <div class="slider">
 	    		<ul class="slides">
@@ -102,7 +150,6 @@
 		 </div>
   
        <div class= "container">
-            <!--h3 id="show-player-name"></h3-->
       <div class="row">
       	<div class="col s12">
       	<div id="question2">
