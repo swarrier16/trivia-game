@@ -41,12 +41,15 @@ $(document).ready(function() {
   $('#question5').hide();
   $('#correct-msg1').hide();
   $('#incorrect-msg1').hide();
+  $('#lose-game-msg').hide();
+  $('#replay').hide();
   //Allow user to type name immediately on page load
 
   $('#player-name').focus();
   $('#input-question1').focus();
   // Store player name
 
+  
    function removeWelcomeScreen() {
     $('#welcome-screen').detach();
     $('#q1').show().addClass('animated fadeIn');
@@ -62,6 +65,7 @@ $(document).ready(function() {
     playerName = $('#player-name').val();
     $('.show-player-name').text(playerName);
     $('#welcome-screen').addClass('animated fadeOutUp');
+    $('.tries-left').text(triesLeft);
     setTimeout(removeWelcomeScreen, 1000);
   });
 
@@ -98,7 +102,9 @@ function answerCheck1() {
     else {
       console.log("Player's answer is incorrect!");
       $('#incorrect-msg1').show().addClass('animated fadeIn');
-      //$('#incorrect-img1').show().addClass('animated fadeIn');
+      $('#incorrect-msg1').addClass('animated fadeOut');
+      triesLeftCountdown ();
+      $('.tries-left').text(triesLeft);
     }
   };
 
@@ -121,14 +127,16 @@ function fadeOutQuestion1() {
 
 //three strikes and youre out counter
  function triesLeftCountdown() {
-    triesLeft--;
-    $('#tries-left').text(triesLeft);
+    triesLeft --;
+    $('.tries-left').text(triesLeft);
     if(triesLeft === 0) {
       $('.question').addClass('animated fadeOut');
       $('.question').detach();
-      $('#lose-game-msg').show().addClass('animated fadeIn')
+      $('#lose-game-msg').show().addClass('animated fadeIn');
     };
   };
+
+  
 
 /*******************************************************************
 QUESTION 2
@@ -163,10 +171,11 @@ function answerCheck2() {
     else {
       console.log("Player's answer is incorrect!");
       $('#incorrect-msg1').show().addClass('animated fadeIn');
-      //$('#incorrect-img1').show().addClass('animated fadeIn');
+      $('#incorrect-msg1').addClass('animated fadeOut');
+      triesLeftCountdown ();
+      $('.tries-left').text(triesLeft);
     }
   };
-
 //removes question 1 and puts in question 2
 function fadeOutQuestion2() {
     $('#question2').detach();
@@ -180,17 +189,6 @@ function fadeOutQuestion2() {
     $('#question3').show().addClass('animated fadeIn');
     $('.dashboard').show().addClass('animated fadeIn');
     console.log (playerName, correctCounter);
-  };
-
-//three strikes and youre out counter
- function triesLeftCountdown() {
-    triesLeft--;
-    $('#tries-left').text(triesLeft);
-    if(triesLeft === 0) {
-      $('.question').addClass('animated fadeOut');
-      $('.question').detach();
-      $('#lose-game-msg').show().addClass('animated fadeIn')
-    };
   };
 
 /*******************************************************************
@@ -226,11 +224,11 @@ function answerCheck3() {
     else {
       console.log("Player's answer is incorrect!");
       $('#incorrect-msg1').show().addClass('animated fadeIn');
-      $('.tries').text(correctCounter);
-      //$('#incorrect-img1').show().addClass('animated fadeIn');
+      $('#incorrect-msg1').addClass('animated fadeOut');
+      triesLeftCountdown ();
+      $('.tries-left').text(triesLeft);
     }
   };
-
 //removes question 1 and puts in question 2
 function fadeOutQuestion3() {
     $('#question3').detach();
@@ -241,23 +239,12 @@ function fadeOutQuestion3() {
     $('#q4').show().addClass('animated fadeIn');
     $('#question4').show().addClass('animated fadeIn');
     $('#correct-msg1').hide();
-    $('#correct-img1').hide();
     $('#incorrect-msg1').hide();
-    $('#incorrect-img1').hide();
     $('.dashboard').show().addClass('animated fadeIn');
     console.log (playerName, correctCounter);
   };
 
-//three strikes and youre out counter
- function triesLeftCountdown() {
-    triesLeft--;
-    $('#tries-left').text(triesLeft);
-    if(triesLeft === 0) {
-      $('.question').addClass('animated fadeOut');
-      $('.question').detach();
-      $('#lose-game-msg').show().addClass('animated fadeIn')
-    };
-  };
+
 
 /*******************************************************************
 QUESTION 4
@@ -292,8 +279,9 @@ function answerCheck4() {
     else {
       console.log("Player's answer is incorrect!");
       $('#incorrect-msg1').show().addClass('animated fadeIn');
-      $('.tries').text(correctCounter);
-      //$('#incorrect-img1').show().addClass('animated fadeIn');
+      $('#incorrect-msg1').addClass('animated fadeOut');
+      triesLeftCountdown ();
+      $('.tries-left').text(triesLeft);
     }
   };
 
@@ -314,16 +302,7 @@ function fadeOutQuestion4() {
     console.log (playerName, correctCounter);
   };
 
-//three strikes and youre out counter
- function triesLeftCountdown() {
-    triesLeft--;
-    $('#tries-left').text(triesLeft);
-    if(triesLeft === 0) {
-      $('.question').addClass('animated fadeOut');
-      $('.question').detach();
-      $('#lose-game-msg').show().addClass('animated fadeIn')
-    };
-  };
+
 
 /*******************************************************************
 QUESTION 5
@@ -358,8 +337,9 @@ function answerCheck5() {
     else {
       console.log("Player's answer is incorrect!");
       $('#incorrect-msg1').show().addClass('animated fadeIn');
-      $('.tries').text(correctCounter);
-      //$('#incorrect-img1').show().addClass('animated fadeIn');
+      $('#incorrect-msg1').addClass('animated fadeOut');
+      triesLeftCountdown ();
+      $('.tries-left').text(triesLeft);
     }
   };
 
@@ -376,17 +356,5 @@ function fadeOutQuestion5() {
     $('.dashboard').show().addClass('animated fadeIn');
     console.log (playerName, correctCounter);
   };
-
-//three strikes and youre out counter
- function triesLeftCountdown() {
-    triesLeft--;
-    $('#tries-left').text(triesLeft);
-    if(triesLeft === 0) {
-      $('.question').addClass('animated fadeOut');
-      $('.question').detach();
-      $('#lose-game-msg').show().addClass('animated fadeIn')
-    };
-  };
-
 
 }); // ready function ends
