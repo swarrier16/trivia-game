@@ -42,7 +42,7 @@ $(document).ready(function() {
   $('#correct-msg1').hide();
   $('#incorrect-msg1').hide();
   $('#lose-game-msg').hide();
-  $('#replay').hide();
+  $('#end').hide();
   //Allow user to type name immediately on page load
 
   $('#player-name').focus();
@@ -285,7 +285,7 @@ function answerCheck4() {
     }
   };
 
-//removes question 1 and puts in question 2
+//removes question 4 and puts in question 5
 function fadeOutQuestion4() {
     $('#question4').detach();
     $('#q4').detach();
@@ -295,11 +295,9 @@ function fadeOutQuestion4() {
     $('#q5').show().addClass('animated fadeIn');
     $('#question5').show().addClass('animated fadeIn');
     $('#correct-msg1').hide();
-    $('#correct-img1').hide();
     $('#incorrect-msg1').hide();
-    $('#incorrect-img1').hide();
     $('.dashboard').show().addClass('animated fadeIn');
-    console.log (playerName, correctCounter);
+    console.log ('this function works');
   };
 
 
@@ -325,7 +323,7 @@ function showPlayerAnswer5() {
 
 //check if answer in right or wrong
 function answerCheck5() {
-    if(playerAnswer5 === answer4) {
+    if(playerAnswer5 === answer5) {
       console.log("Player's answer is correct!");
       $('#correct-msg1').show().addClass('animated fadeIn');
       //$('#correct-img1').show().addClass('animated fadeIn');
@@ -354,7 +352,6 @@ function fadeOutQuestion5() {
     $('#correct-msg1').hide();
     $('#incorrect-msg1').hide();
     $('.dashboard').show().addClass('animated fadeIn');
-    console.log (playerName, correctCounter);
   };
 
 }); // ready function ends
