@@ -354,4 +354,13 @@ function fadeOutQuestion5() {
     $('.dashboard').show().addClass('animated fadeIn');
   };
 
+/**************************************************************
+Replay
+**************************************************************/
+
+$('.replay-button').on('click', function(e) {
+    e.preventDefault(); // prevents form from submitting to a database    
+    location.reload();  
+  }); 
+
 }); // ready function ends
