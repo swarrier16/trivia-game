@@ -101,6 +101,7 @@ function answerCheck1() {
     }
     else {
       console.log("Player's answer is incorrect!");
+      $('#input-question1').val('');
       $('#incorrect-msg1').show().addClass('animated fadeIn');
       $('#incorrect-msg1').addClass('animated fadeOut');
       triesLeftCountdown ();
@@ -170,6 +171,7 @@ function answerCheck2() {
     }
     else {
       console.log("Player's answer is incorrect!");
+      $('#input-question2').val('');
       $('#incorrect-msg1').show().addClass('animated fadeIn');
       $('#incorrect-msg1').addClass('animated fadeOut');
       triesLeftCountdown ();
@@ -223,6 +225,7 @@ function answerCheck3() {
     }
     else {
       console.log("Player's answer is incorrect!");
+      $('#input-question3').val('');
       $('#incorrect-msg1').show().addClass('animated fadeIn');
       $('#incorrect-msg1').addClass('animated fadeOut');
       triesLeftCountdown ();
@@ -278,6 +281,7 @@ function answerCheck4() {
     }
     else {
       console.log("Player's answer is incorrect!");
+      $('#input-question4').val('');
       $('#incorrect-msg1').show().addClass('animated fadeIn');
       $('#incorrect-msg1').addClass('animated fadeOut');
       triesLeftCountdown ();
@@ -334,6 +338,7 @@ function answerCheck5() {
     }
     else {
       console.log("Player's answer is incorrect!");
+      $('#input-question5').val('');
       $('#incorrect-msg1').show().addClass('animated fadeIn');
       $('#incorrect-msg1').addClass('animated fadeOut');
       triesLeftCountdown ();
@@ -353,5 +358,14 @@ function fadeOutQuestion5() {
     $('#incorrect-msg1').hide();
     $('.dashboard').show().addClass('animated fadeIn');
   };
+
+/**************************************************************
+Replay
+**************************************************************/
+
+$('.replay-button').on('click', function(e) {
+    e.preventDefault(); // prevents form from submitting to a database    
+    location.reload();  
+  }); 
 
 }); // ready function ends
